@@ -3,6 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #cccccc;
 }
 
 a {
@@ -21,6 +22,7 @@ th, td {
 }
 
 nav{
+  font-family: 'Fugaz One', cursive;
   display: flex!important;
   color: white;
   padding: 30px;
@@ -34,6 +36,7 @@ nav img{
 }
 
 form{
+  background-color: rgba(255, 255, 255, 0.945);
   display: inline-block;
   margin-left: 15%;
   margin-right: 15%;
@@ -53,4 +56,8 @@ form button{
   padding: 15px;
   border-radius: 5px;
   box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.75);
+}
+
+footer{
+  margin-bottom: 0;
 }
