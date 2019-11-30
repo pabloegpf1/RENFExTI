@@ -20,7 +20,7 @@ router.post('/submit', function (req, res) {
       from: 'whatsapp:' + process.env.ORIGIN_PHONE,
       to: 'whatsapp:+34' + number,
       body: name,
-      mediaUrl: 'https://bit.ly/whatsapp-image-example',
+      mediaUrl: './views/public/images/qr_code.jpg',
     })
     .then(message => {
       console.log(message.sid);
