@@ -20,7 +20,7 @@ router.post('/submit', function (req, res) {
       from: 'whatsapp:' + process.env.ORIGIN_PHONE,
       to: 'whatsapp:+34' + number,
       body: name,
-      mediaUrl: './views/public/images/qr_code.jpg',
+      mediaUrl: 'https://oliva.es/wp-content/uploads/2014/07/1881_MobileCode_QR_L_XL.png',
     })
     .then(message => {
       console.log(message.sid);
