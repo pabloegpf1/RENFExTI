@@ -16,7 +16,7 @@ router.post('/submit', function (req, res) {
       phone: '0034' + req.body.phone,
       body: 'https://renfe-x-ti.herokuapp.com/images/qr.png',
       filename: 'Mi código qr Renfe',
-      caption: '!Hola ' + req.body.name + ', Aquí tienes tu QR que te permitirá acceder al tren'
+      caption: '¡Hola ' + req.body.name + '!, Aquí tienes tu QR que te permitirá acceder al tren'
     }
   }
   request(options, function (error, response, body) {
