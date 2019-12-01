@@ -5,30 +5,41 @@
   <title>RENFE X TÍ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='/stylesheets/style.css' />
-  <link rel="shortcut icon" type="image/png" href="images/favicon.ico" />
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=Fugaz+One&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <nav>
-    <a href="/"><img src="images/logo.png" href="/"><img src="images/logo-3.png" href="/"></a>
+    <a href="/"><img src="images/logo.png" href="/"></a>
+    <h1> x tí</h1>
   </nav>
   <form action="/submit" method="post">
-    <div class="form-group">
+
+    <div class="form-group-row">
       <label for="exampleInputEmail1">Nombre</label>
-      <input type="text" class="form-control" name="name">
+      <div class="input-group mb-4">
+        <input type="text" class="form-control" name="name">
+      </div>
     </div>
-    <div class="form-group">
+
+    <div class="form-group-row">
       <label for="exampleInputPassword1">Número de teléfono</label>
-      <input type="number" class="form-control" id="exampleInputPassword1" aria-describedby="phoneHelp" name="phone">
+      <div class="input-group mb-4">
+        <div class="input-group-prepend">
+          <div class="input-group-text">+34</div>
+        </div>
+        <input type="number" class="form-control" id="exampleInputPassword1" aria-describedby="phoneHelp" name="phone">
+      </div>
       <small id="phonehelp" class="form-text text-muted">Nunca compartiremos tus datos.</small>
     </div>
+
     <div class="form-group form-check">
       <input type="checkbox" class="form-check-input" id="exampleCheck1" required>
-      <label class="form-check-label" for="exampleCheck1">Quiero recibir mi billete e información de mi viaje</label>
+      <label class="form-check-label" for="exampleCheck1">Quiero recibir mi billete y avisos de mi viaje</label>
     </div>
-    <button type="submit" class="btn btn-primary btn-lg btn-block">Recibir billete + Avisos</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Recibir billete</button>
   </form>
 </body>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
