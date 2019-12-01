@@ -8,6 +8,7 @@
     "dev": "nodemon -L"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "dotenv": "^8.0.0",
