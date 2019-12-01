@@ -1,11 +1,7 @@
 const express = require('express');
 const router = express.Router();
+var request = require("request");
 
-const twilio = require('twilio');
-const client = twilio(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN
-);
 
 const axios = require('axios')
 
@@ -41,34 +37,23 @@ router.get('/chat-api', function (req, res) {
 })
 
 router.post('/submit', function (req, res) {
-  let name = req.body.name;
-  let number = req.body.phone;
-
-  client.messages
-    .create({
-      from: 'whatsapp:' + process.env.ORIGIN_PHONE,
-      to: 'whatsapp:+34' + number,
-      body: name,
-      mediaUrl: 'https://oliva.es/wp-content/uploads/2014/07/1881_MobileCode_QR_L_XL.png',
-    })
-    .then(message => {
-      console.log(message.sid);
-      res.render('thanks')
-    })
-    .catch(err => {
-      console.error(err);
-      res.render('err')
-    });
-})
-
-
-router.post('/submit-chat-api', function (req, res) {
-
+  var options = {
+    method: 'POST',
+    url: 'https://api.chat-api.com/instance83742/sendFile',
+    qs:
+    {
+      token: process.env.CHAT_API_TOKEN,
+      phone: '0034' + req.body.phone,
+      body: 'https://renfe-x-ti.herokuapp.com/images/qr.png',
+      filename: 'Mi código qr Renfe',
+      caption: 'hola ' + req.body.name
+    }
+  }
   request(options, function (error, response, body) {
-    if (error) throw new Error(error);
-  
+    if (error) throw new Error(error)
     console.log(body);
-  });
+    res.render('thanks')
+  })
 
 
 })
